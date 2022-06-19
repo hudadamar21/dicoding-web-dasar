@@ -1,0 +1,41 @@
+#skill .list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1.6rem;
+}
+
+#skill figure {
+  position: relative;
+  background: white;
+  padding: 0.55rem 1.5rem 0.55rem 4rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgb(243, 243, 243);
+}
+
+html.dark #skill figure {
+  background: rgb(36, 36, 36);
+  border: 1px solid rgb(36, 36, 36);
+}
+
+#skill figure img {
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  transform: translateY(-50%);
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+@media screen and (max-width: 800px) {
+  #skill .list {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #text{
+    font-size: 5em;
+  }
+}

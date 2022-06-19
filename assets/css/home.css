@@ -1,0 +1,97 @@
+#home {
+  display: flex;
+  align-items: center;
+}
+
+#home .describe {
+  padding-right: 3rem;
+}
+
+#home .photo {
+  position: relative;
+}
+
+#home .photo .image {
+  width: 20rem;
+}
+
+#home .photo .image {
+  position: relative;
+  z-index: 10;
+  transition: 0.5s;
+  transform-origin: right;
+  border-radius: 50%;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#home .photo:hover .image {
+  transform: perspective(800px) rotateY(180deg);
+}
+
+#home .photo .open {
+  position: absolute;
+  width: 3.5rem;
+  bottom: 20px;
+  right: -60px;
+  opacity: 70%;
+  transform: rotate(-70deg) rotateX(180deg);
+}
+
+html.dark #home .photo .open {
+  filter: invert(1);
+}
+
+#home .photo .follow {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#home .photo .follow a{
+  display: flex;
+  background: #000;
+  margin-top: 0.3rem;
+  border-radius: 7px;
+  padding: 0.3rem 0.6rem;
+  width: max-content;
+  color: white;
+  align-items: center;
+  gap: 0.5rem;
+  transition: 0.2s;
+}
+
+#home .photo .follow a img {
+  width: 2rem;
+}
+
+#home .photo .follow a:hover {
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+html.dark #home .photo .follow a {
+  background: rgb(36, 36, 36);
+}
+
+@media screen and (max-width: 800px) {
+  #home {
+    flex-direction: column;
+  }
+  #home .describe {
+    padding-right: 0rem;
+  }
+  #home .photo img {
+    width: 80%;
+  }
+  #home .photo .open {
+    position: absolute;
+    width: 3.5rem;
+    bottom: -80px;
+    right: 0px;
+    opacity: 70%;
+    transform: rotate(-60deg) rotateX(180deg);
+  }
+}
