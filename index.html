@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dicoding - Dasar Pemorgramman Web</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="./assets/css/contact.css">
+</head>
+<body>
+  <header class="">
+    <img src="./assets/images/logo-bg-transparent.svg" alt="logo">
+    <div class="navlist">
+      <nav>
+        <div id="marker"></div>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skill">Skill</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="toggle-theme">
+        <img src="./assets/images/dark-mode.svg" alt="mode">
+      </button>
+    </div>
+  </header>
+  <main>
+    <section id="home">
+      <div class="describe">
+        <h1>Welcome to my portofolio</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eveniet iusto praesentium quas ratione quo, deleniti veniam. Voluptatum modi mollitia natus esse explicabo, suscipit eveniet pariatur molestias voluptate eaque unde!</p>
+      </div>
+      <div class="photo">
+        <img class="image" src="./assets/images/photo.jpg" alt="photo">
+        <img class="open" src="./assets/images/arrow.png" alt="arrow">
+        <div class="follow">
+          <h4>Follow:</h4>
+          <a href="https://github.com/hudadamar21" target="_blank">
+            <img src="./assets/images/github.svg" alt="">
+            Ma Github
+          </a>
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <h2>Hallo, I'm Huda Damar</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque debitis delectus inventore assumenda eos in laboriosam fugit, accusantium quidem, sed esse sit quam. Mollitia rerum quod eveniet laboriosam, quidem pariatur.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem sequi reprehenderit ea omnis earum labore porro accusantium natus nostrum ipsa quod commodi perferendis, facilis a officiis quis impedit consequuntur atque aperiam quasi praesentium veritatis possimus doloribus veniam. Accusamus ipsam impedit, quis dolore aspernatur hic explicabo optio aperiam blanditiis modi. Sapiente, quo. Deserunt ipsam vero similique unde, officia aperiam deleniti harum? Iste ratione ipsa quibusdam accusantium accusamus dolorem molestiae quas sint! Veritatis, corrupti atque sit vitae fuga odio voluptate dicta delectus recusandae. Aut quam rerum quos distinctio dolore molestias. Dolor consequuntur itaque, adipisci a amet velit libero? Libero asperiores totam possimus?</p>
+    </section>
+    <section id="skill">
+      <h2>Ma Skill</h2>
+      <div class="list">
+        <figure>
+          <img src="./assets/images/html.png" alt="">
+          <figcaption>HTML</figcaption>
+        </figure>
+        <figure>
+          <img src="./assets/images/css.png" alt="">
+          <figcaption>CSS</figcaption>
+        </figure>
+        <figure>
+          <img src="./assets/images/javascript.png" alt="">
+          <figcaption>Javascript</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <div class="row">
+          <div class="col">
+              <div class="inputBox">
+                  <input type="text" name="" required>
+                  <span class="text">First Name</span>
+                  <span class="line"></span>
+              </div>
+          </div>
+          <div class="col">
+              <div class="inputBox">
+                  <input type="text" name="" required>
+                  <span class="text">Last Name</span>
+                  <span class="line"></span>
+              </div>
+          </div>
+          <div class="col">
+              <div class="inputBox">
+                  <input type="text" name="" required>
+                  <span class="text">Email</span>
+                  <span class="line"></span>
+              </div>
+          </div>
+          <div class="col">
+              <div class="inputBox">
+                  <input type="text" name="" required>
+                  <span class="text">Phone</span>
+                  <span class="line"></span>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col">
+              <div class="inputBox textarea">
+                  <textarea required></textarea>
+                  <span class="text">Your Message..</span>
+                  <span class="line"></span>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col">
+              <button type="submit">Send</button>
+          </div>
+      </div>
+    </section>
+  </main>
+  <footer >
+    copyright@2021. hudadamar21
+  </footer>
+
+  <script>
+
+    const marker = document.querySelector('#marker');
+    const item = document.querySelectorAll('nav a');
+
+    function indicator (e){
+      console.log("Left",e.offsetLeft)
+      console.log("Width",e.offsetWidth)
+      marker.style.left = e.offsetLeft+"px";
+      marker.style.width = e.offsetWidth+"px";
+    }
+    item.forEach(link => {
+      link.addEventListener('click', (e)=> {
+        indicator(e.target)
+      });
+    })
+
+    // Toggle Theme
+    const html = document.querySelector('html');
+    const toggleTheme = document.querySelector('#toggle-theme');
+    toggleTheme.addEventListener('click', () => {
+      html.classList.toggle('dark')
+
+    })
+  </script>
+</body>
+</html>

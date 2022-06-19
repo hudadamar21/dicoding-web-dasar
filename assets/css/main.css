@@ -1,0 +1,321 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-foreground: rgb(21, 21, 21);
+  --secondary-foreground: rgb(56, 56, 56);
+  --primary-background: rgb(250, 250, 250);
+  --header-background: rgba(250, 250, 250, 0.8);
+  --vintage-color: rgba(230,230,230,1);
+}
+
+html.dark {
+  --primary-foreground: rgb(230, 230, 230);
+  --secondary-foreground: rgb(200, 200, 200);
+  --primary-background:  rgb(21, 21, 21);
+  --header-background:  rgba(21, 21, 21, 0.8);
+  --vintage-color: rgb(32, 32, 32);
+}
+
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-foreground);
+}
+
+p {
+  color: var(--secondary-foreground);
+  margin-bottom: 1.5rem;
+  line-height: 1.6rem;
+}
+
+html {
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--primary-background);
+  background: linear-gradient(90deg, var(--vintage-color) 0%, var(--primary-background) 13%, var(--primary-background) 84%, var(--vintage-color) 100%);
+  color: var(--primary-foreground);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  max-width: 1050px;
+  width: 100%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  background: var(--header-background);
+  backdrop-filter: blur(7px);
+  z-index: 20;
+}
+
+header img {
+  width: 2rem;
+  height: 2rem;
+}
+
+html.dark header img {
+  filter: invert(1);
+}
+
+header .navlist {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+header nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 2rem;
+}
+header nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--primary-foreground);
+  transition: 0.3s;
+  display: block;
+  height: 100%;
+  padding: 1.5rem 0;
+}
+nav #marker{
+  position: absolute;
+  height: 4px;
+  width: 0;
+  background-color: var(--primary-foreground);
+  bottom: 10px;
+  transition: 0.3s;
+  z-index: 1;
+}
+
+.navlist button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.navlist button img {
+  width: 1.5rem;
+}
+
+main {
+  margin-top: 8rem;
+  padding: 1rem;
+}
+
+main > section {
+  margin-bottom: 8rem;
+}
+
+#home {
+  display: flex;
+  align-items: center;
+}
+
+#home .describe {
+  padding-right: 9rem;
+}
+
+#home .photo {
+  position: relative;
+}
+
+#home .photo .image {
+  width: 20rem;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
+  
+}
+
+#home .photo .image {
+  position: relative;
+  z-index: 10;
+  transition: 0.5s;
+  transform-origin: right;
+}
+
+#home .photo:hover .image {
+  transform: perspective(800px) rotateY(180deg);
+}
+
+#home .photo .open {
+  position: absolute;
+  width: 3.5rem;
+  bottom: 20px;
+  right: -75px;
+  opacity: 70%;
+  transform: rotate(-85deg) rotateX(180deg);
+}
+
+html.dark #home .photo .open {
+  filter: invert(1);
+}
+
+#home .photo .follow {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#home .photo .follow a{
+  display: flex;
+  background: #000;
+  margin-top: 0.3rem;
+  border-radius: 7px;
+  padding: 0.3rem 0.6rem;
+  width: max-content;
+  color: white;
+  align-items: center;
+  gap: 0.5rem;
+  transition: 0.2s;
+}
+
+#home .photo .follow a img {
+  width: 2rem;
+}
+
+#home .photo .follow a:hover {
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+html.dark #home .photo .follow a {
+  background: rgb(36, 36, 36);
+}
+
+#skill .list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1.6rem;
+}
+
+#skill figure {
+  position: relative;
+  background: white;
+  padding: 0.55rem 1.5rem 0.55rem 4rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgb(243, 243, 243);
+}
+
+html.dark #skill figure {
+  background: rgb(36, 36, 36);
+  border: 1px solid rgb(36, 36, 36);
+}
+
+#skill figure img {
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  transform: translateY(-50%);
+  width: 3.5rem;
+  height: 3.5rem;
+} 
+
+#text{
+  position: relative; 
+  color: white;
+  font-weight: 700;
+  font-size: 10rem;
+  line-height: 0.9em;
+  letter-spacing: 2px;
+  text-align: center;
+  transform: rotate(-28deg) skew(25deg);
+}
+
+html.dark #text {
+  color: #202020;
+}
+
+html.dark #text:before {
+  color: rgba(133, 133, 133, 0.3);
+}
+
+#text:before{
+  content: attr(data-text);
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.3);
+  text-shadow: none;
+  filter: blur(15px);
+  z-index: -1;
+}
+
+.isometric {
+  margin: 5rem 0;
+}
+
+footer {
+  margin-top: 5rem;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    background: var(--primary-background);
+  }
+
+  header {
+    padding-top: 1rem;
+    flex-direction: column;
+  }
+  
+  #home {
+    flex-direction: column;
+  }
+  #home .describe {
+    padding-right: 0rem;
+  }
+  #home .photo img {
+    width: 80%;
+  }
+  #home .photo .open {
+    position: absolute;
+    width: 3.5rem;
+    bottom: -80px;
+    right: 0px;
+    opacity: 70%;
+    transform: rotate(-60deg) rotateX(180deg);
+  }
+
+  #skill .list {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #text{
+    font-size: 5em;
+  }
+}
