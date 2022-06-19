@@ -174,10 +174,23 @@ html.dark #profile {
 }
 
 #profile img {
-  width: 6rem;
-  height: 7rem;
+  width: 6.5rem;
+  height: 6.5rem;
   object-fit: cover;
   object-position: top;
+  border-radius: 50%;
+}
+
+#profile h2 {
+  line-height: 0;
+  margin-top: 1rem;
+}
+#profile h3 {
+  font-size: 1.1rem;
+  color: var(--secondary-foreground);
+}
+#profile p {
+  color: var(--secondary-foreground);
 }
 
 footer {
