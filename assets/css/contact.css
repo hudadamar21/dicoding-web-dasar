@@ -104,7 +104,7 @@ button[type="submit"] {
   background: var(--primary-foreground);
   color: white;
   font-size: 18px;
-  border-radius: 2px;
+  border-radius: 7px;
   transition: 0.25s;
 }
 

@@ -6,7 +6,7 @@
 
 :root {
   --primary-foreground: rgb(21, 21, 21);
-  --secondary-foreground: rgb(56, 56, 56);
+  --secondary-foreground: rgb(66, 66, 66);
   --primary-background: rgb(250, 250, 250);
   --header-background: rgba(250, 250, 250, 0.8);
   --vintage-color: rgba(230,230,230,1);
@@ -23,7 +23,6 @@ html.dark {
 
 h1 {
   font-size: 2rem;
-  margin-bottom: 2rem;
 }
 
 h2 {
@@ -123,17 +122,18 @@ nav #marker{
   width: 1.5rem;
 }
 
-
-#content {
-  display: flex;
-}
-
 main {
+  display: flex;
   margin-top: 8rem;
   padding: 1rem;
+  width: 100%;
 }
 
-main > * {
+main article {
+  flex-grow: 1;
+}
+
+main article > * {
   margin-bottom: 8rem;
 }
 
@@ -141,16 +141,114 @@ main > *:last-child {
   margin-bottom: 0rem;
 }
 
+.describe h2 {
+  color: rgb(53, 53, 53);
+}
+
+html.dark .describe h2 {
+  color: var(--primary-foreground);
+}
+
+#portfolio {
+  width: 100%;
+}
+
+.portfolio-list {
+  margin-top: 2rem;
+}
+
+.portfolio-list > * {
+  margin-bottom: 1.5rem;
+}
+
+.portfolio-card  {
+  display: flex;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+html.dark .portfolio-card {
+  background: rgb(31, 31, 31);
+}
+
+.portfolio-card img {
+  width: 200px;
+  aspect-ratio: 10/8;
+  object-fit: cover;
+}
+
+.portfolio-card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem 1.2rem;
+}
+
+.portfolio-card-info p {
+  font-size: 0.9rem;
+  color: var(--secondary-foreground);
+}
+
+.portfolio-link-list {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.portfolio-link {
+  display: block;
+  background: black;
+  border-radius: 50%;
+  line-height: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: 0.3s;
+}
+.portfolio-link img {
+  width: 1.5rem;
+  height: 1.5rem;
+  line-height: 0;
+}
+
+.portfolio-link:hover {
+  transform: translateY(-2px);
+}
+
+.more-button {
+  background-color: black;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: max-content;
+  border-radius: 7px;
+  color: white;
+  transition: 0.3s;
+}
+
+html.dark .more-button {
+  background-color: rgb(31,31,31);
+}
+
+.more-button:hover {
+  opacity: 90%;
+}
+
+.more-button img {
+  width: 1.5rem;
+}
+
 aside {
   padding-left: 7rem;
 }
 
 #profile {
+  width: 350px;
   position: sticky;
   top: 7rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
 }
 
 #profile {
@@ -159,7 +257,7 @@ aside {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-top: 9rem;
+  margin-top: 3rem;
   font-size: 12px;
   gap: 1rem;
   background: white;
@@ -182,7 +280,7 @@ html.dark #profile {
 }
 
 #profile h2 {
-  line-height: 0;
+  line-height: 0.5rem;
   margin-top: 1rem;
 }
 #profile h3 {
@@ -207,6 +305,14 @@ footer {
   header {
     padding-top: 1rem;
     flex-direction: column;
+  }
+  .portfolio-card  {
+    flex-direction: column;
+  }
+
+  .portfolio-card img {
+    width: 100%;
+    aspect-ratio: 10/5;
   }
 }
 @media screen and (max-width: 1200px) {
